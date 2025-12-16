@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  localstack:
+    image: localstack/localstack
+    container_name: localstack_dynamodb_optimistic_lock
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=${SERVICES-dynamodb}
+      - DYNAMODB_SHARE_DB=1
+      - AWS_DEFAULT_REGION=sa-east-1
+      - AWS_ACCESS_KEY_ID=GUEST
+      - AWS_SECRET_ACCESS_KEY=guest
+      - AWS_SECRET_KEY=guest
+      - AWS_DEFAULT_OUTPUT=json
+    volumes:
+      - "./localstack/entrypoint.d:/docker-entrypoint-initaws.d"
+    networks:
+      - localstack_net
+
+volumes:
+  localstack_data:
+
+networks:
+  localstack_net:
+    driver: bridge

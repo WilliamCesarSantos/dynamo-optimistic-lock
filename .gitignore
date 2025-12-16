@@ -1,0 +1,48 @@
+# / .gitignore for Kotlin + Spring Boot (Maven) + IntelliJ (macOS)
+
+# Maven build output
+/target/
+
+# Compiled class files
+*.class
+
+# Kotlin/Java
+*.jar
+*.war
+*.ear
+
+# IntelliJ IDEA
+/.idea/
+/*.iml
+/out/
+
+# VS Code
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# Environment and secrets
+.env
+.env.*
+.aws/
+
+# macOS
+.DS_Store
+
+# OS generated files
+Thumbs.db
+
+# Generated / build folders
+/generated/
+/build/
+/dist/
+
+# Test / coverage
+coverage/
+jacoco.exec
+
+# Temporary files
+*.tmp
+*.swp
